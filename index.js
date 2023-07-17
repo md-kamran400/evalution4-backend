@@ -21,5 +21,5 @@ app.use("/posts",AuthMiddleWAre, postRouter)
 
 app.listen(4040, ()=>{
     connect()
-    console.log("server is runing on 4040")
+    console.log("server runing on 4040")
 });
