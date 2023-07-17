@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken");
 const {BLackListModel} = require("../models/blacklist.modle")
 require("dotenv").config();
 
-const auth = async(req, res, next) => {
+const AuthMiddleWAre = async(req, res, next) => {
     const token = req.headers.authorization.split(" ")[1];
 
     try {
@@ -21,4 +21,4 @@ const auth = async(req, res, next) => {
     }
 }
 
-module.exports = {auth}
+module.exports = {AuthMiddleWAre}

@@ -2,7 +2,7 @@ const express = require("express")
 const mongoose = require("mongoose")
 const {userRouter} = require("./routes/user.route")
 const {postRouter} = require("./routes/post.route")
-const {auth} = require("./middleware/auth.middlware")
+const {AuthMiddleWAre} = require("./middleware/auth.middlware")
 const cors = require("cors")
 const app = express()
 app.use(express.json())
@@ -17,7 +17,7 @@ const connect = async()=>{
 }
 
 app.use("/users", userRouter)
-app.use("/posts",auth, postRouter)
+app.use("/posts",AuthMiddleWAre, postRouter)
 
 app.listen(4040, ()=>{
     connect()
