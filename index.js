@@ -9,7 +9,7 @@ app.use(express.json())
 app.use(cors());
 const connect = async()=>{
     try {
-        await mongoose.connect(process.env.MONGOOSE_UR)
+        await mongoose.connect(process.env.MONGOOSE_LINK)
         console.log("conncted")
     } catch (error) {
         console.log(error)
