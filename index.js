@@ -9,7 +9,7 @@ app.use(express.json())
 app.use(cors());
 const connect = async()=>{
     try {
-        await mongoose.connect("mongodb+srv://ka5452488:mongodb123@cluster0.10yjjlt.mongodb.net/users?retryWrites=true&w=majority")
+        await mongoose.connect(process.env.MONGOOSE_URL)
         console.log("conncted")
     } catch (error) {
         console.log(error)
@@ -19,7 +19,7 @@ const connect = async()=>{
 app.use("/users", userRouter)
 app.use("/posts",auth, postRouter)
 
-app.listen(5050, ()=>{
+app.listen(4040, ()=>{
     connect()
-    console.log("server is runing on 3030")
+    console.log("server is runing on 4040")
 });
